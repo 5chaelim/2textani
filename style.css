@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+
+*{margin: 0; padding: 0;}
+
+
+body{background-color: #222;}
+.section{width: 100vw; height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.section .scroll{display: flex; /* 내자식을 옆으로 정렬하겠다 float이랑 같음낮은 사양에선 사용 안됨 */ 
+    position: absolute;
+    left: 95px; top: 0;
+    transform: rotate(90deg);
+    transform-origin: left top;
+}
+.section .scroll div{background-color: #fff; 
+    font-family: 'Poppins', sans-serif; font-size: 64px;
+    white-space: nowrap; /* 글자를 옆으로 나열함 */
+    font-weight: 800;
+    animation: animate1 40s linear infinite;
+}
+.section .scroll div:nth-child(2){ /* div중 2번째를 부르는 방법 */
+    animation: animate2 40s linear infinite;
+    animation-delay: -20s;
+}
+
+@keyframes animate1{
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(-100%)}
+}
+
+@keyframes animate2{
+    0%{transform: translateX(0%);}
+    100%{transform: translateX(-200%)}
+}
+
+/* .section2{padding-top: 30%; position: relative; height: 100vh;}
+.section2 .rotate{background-color: red;
+    width: 300px; height: 100px; 
+    line-height: 100px; text-align: center;
+    position: absolute;left: 50%; top: 50%;
+    transform: rotate(0deg);
+    transform-origin: left top;
+} */
